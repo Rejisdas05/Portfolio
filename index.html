@@ -327,13 +327,13 @@
              
               <div class="form-group col-md-6">
                 <label for="name">Mobile</label>
-                <input type="phone" class="form-control" name="pnone" id="phone" required  onchange="checkphone();">
-                <span id="nm"  style="font-size: 12px; color: aqua; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"></span>
+                <input type="phone" class="form-control" name="phone" id="phone" required  >
+                <div class="invalid-feedback">Please enter correct mobile number</div>
               </div>
             </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="10" required></textarea>
                 <span id="nm"  style="font-size: 12px; color: aqua; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"></span>
               </div>
               <div class="my-3">
@@ -384,6 +384,13 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
+
+
+
+
+
+
+
          $("#submit-form").submit((e)=>{
             e.preventDefault()
             $.ajax({
@@ -407,6 +414,7 @@
    
    function checkphone()
    {
+   
        let mob= document.getElementById("phone").value;
        if(isNaN(mob) || mob === "")
        {
